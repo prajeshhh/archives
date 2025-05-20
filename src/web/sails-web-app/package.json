@@ -33,7 +33,7 @@
     "type": "git",
     "url": "git://github.com/wysa/sails-web-app.git"
   },
-  "author": "wysa",
+  "author": "prajeshhh",
   "license": "",
   "engines": {
     "node": "^18.18"
