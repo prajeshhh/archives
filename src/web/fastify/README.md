@@ -1,3 +1,7 @@
+# fastify
+
+- uses plugins, initiated by `register()`
+
 ## usage
 
 ```bash
