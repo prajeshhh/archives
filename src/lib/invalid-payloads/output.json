@@ -1,0 +1,43 @@
+[
+  {
+    "path": "/api/auth/register",
+    "payloads": [
+      {
+        // empty
+      },
+      {
+        // required
+        "password": ""
+      },
+      {
+        // required
+        "username": ""
+      },
+      {
+        // type
+        "username": 1,
+        "password": ""
+      },
+      {
+        // minLength
+        "username": "12",
+        "password": ""
+      },
+      {
+        // maxLength
+        "username": "123456789012345678901",
+        "password": ""
+      },
+      {
+        "username": "123",
+        // type
+        "password": 1
+      },
+      {
+        "username": "123",
+        // minLength
+        "password": ""
+      }
+    ]
+  }
+]
