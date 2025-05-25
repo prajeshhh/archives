@@ -4,6 +4,11 @@
     "schema": {
       "type": "object",
       "properties": {
+        "email": {
+          "type": "string",
+          "minLength": 3,
+          "maxLength": 50
+        },
         "username": {
           "type": "string",
           "minLength": 3,
@@ -14,25 +19,8 @@
           "minLength": 1
         }
       },
-      "required": ["username", "password"]
-    }
-  },
-  {
-    "path": "/api/auth/login",
-    "schema": {
-      "type": "object",
-      "properties": {
-        "username": {
-          "type": "string",
-          "minLength": 3,
-          "maxLength": 20
-        },
-        "password": {
-          "type": "string",
-          "minLength": 1
-        }
-      },
-      "required": ["username", "password"]
+      "required": ["password"],
+      "anyOf": [{ "required": ["email"] }, { "required": ["username"] }]
     }
   }
 ]
