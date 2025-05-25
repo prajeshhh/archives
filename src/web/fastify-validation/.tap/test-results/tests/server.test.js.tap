@@ -1,0 +1,51 @@
+TAP version 14
+# Subtest: server health route "/api/health"
+    ok 1 - returns a status code of 200
+    ok 2 - returns server online
+    1..2
+ok 1 - server health route "/api/health" # time=24.627ms
+
+# Subtest: user registration route "/api/auth/register"
+    not ok 1 - returns a status code of 200
+      ---
+      compare: ===
+      at:
+        fileName: tests/server.test.js
+        lineNumber: 35
+        columnNumber: 5
+        typeName: Test
+      stack: |
+        Test.<anonymous> (tests/server.test.js:35:5)
+      source: |2
+          })
+      
+          t.equal(statusCode, 200, 'returns a status code of 200')
+        ----^
+          t.end()
+        })
+      diff: |
+        --- expected
+        +++ actual
+        @@ -1,1 +1,1 @@
+        -200
+        +400
+      ...
+    
+    1..1
+not ok 2 - user registration route "/api/auth/register" # time=32.633ms
+  ---
+  at:
+    fileName: tests/server.test.js
+    lineNumber: 22
+    columnNumber: 1
+    typeName: Object
+  source: |
+    })
+  
+    test('user registration route "/api/auth/register"', async t => {
+    ^
+      const { statusCode, body } = await client.request({
+        method: 'POST',
+  ...
+
+1..2
