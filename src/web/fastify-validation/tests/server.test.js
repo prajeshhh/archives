@@ -32,7 +32,7 @@ test('user registration route "/api/auth/register"', async t => {
     })
   })
 
-  t.equal(statusCode, 400, 'returns a status code of 200')
+  t.equal(statusCode, 400, 'returns a status code of 400')
   t.end()
 })
 
