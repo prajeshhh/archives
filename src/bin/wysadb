@@ -1,0 +1,24 @@
+#!/bin/bash
+
+cmd=$1
+
+case $cmd in
+  init)
+    cd /home/wysa/files/projects/mongo-redis/ || exit
+    docker compose up -d
+    ;;
+  start)
+    docker start mongodb1
+    docker start wysa-redis
+    docker ps
+    ;;
+  stop)
+    docker stop mongodb1
+    docker stop wysa-redis
+    docker ps
+    ;;
+  *)
+    echo "Usage: $0 {init|start|stop}"
+    exit 1
+    ;;
+esac
